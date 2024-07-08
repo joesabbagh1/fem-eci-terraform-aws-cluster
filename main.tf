@@ -74,8 +74,8 @@ resource "aws_iam_instance_profile" "this" {
 
 resource "aws_launch_template" "this" {
   name_prefix   = "${var.name}-${var.environment}-cluster-ecs-"
-  image_id      = "ami-003d53c9bb0a387f4"
-  instance_type = "t3.medium"
+  image_id      = data.aws_ami.this.id
+  instance_type = var.instance_type
   key_name      = "${var.name}-${var.environment}-cluster-ecs"
 
   block_device_mappings {
