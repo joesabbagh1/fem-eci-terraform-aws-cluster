@@ -73,8 +73,3 @@ data "aws_security_group" "this_private" {
     values = [data.aws_vpc.this.id]
   }
 }
-
-data "tfe_outputs" "tfe" {
-  organization = "devops_training2024"
-  workspace    = "fem-eci-workspace"
-}
